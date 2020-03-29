@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 
+// сортировка слиянием
 void Merge(std::vector<int> A, int first, int last)
 {
 	int middle, start, final, j;

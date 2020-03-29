@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 
+// сортировка вставками
 void sorting(int amount, std::vector<int> &arr)
 {
 	for (int i = 1; i < amount; i++)
