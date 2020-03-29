@@ -2,49 +2,43 @@ addons:
 apt:
 update: true
 
+env:
+    - TASK_DIR=task_01
+
 stages:
-  - stylecheck
-  - build
-  - memcheck
-  - test
+    - stylecheck
+    - memcheck
+    - test
 
 language: cpp
 
-env:
-    - CLANG_VERSION="6.0"
-
-jobs:
-  include:
-    before_install:
+before_install:
     - sudo apt update
     - sudo apt install clang-format-${CLANG_VERSION} -version || true
-    - vim --version
-    - clang-format --version
     - sudo apt install valgrind
     - sudo apt install cmake
+    - sudo apt install cppcheck
     - sudo apt install libgtest-dev
     - cd /usr/src/gtest
-    - sudo cmake CMakeLists.txt
+    - sudo cmake .
     - sudo make
     - sudo cp *.a /usr/lib
     - cd -
-    
-    stage: stylecheck
-    before_script:
-    - cppcheck --std=c++11 -q --enable=all --error-exitcode=1 
-    
-    stage: build
-    before_script:
-    - mkdir build
-    - cd build
-    - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
-    - cmake --build .
-    - make
 
-    stage: memcheck
-    script: valgrind --leak-check=full -q ./task_01/task_01
+before_script:
+    - cd $TASK_DIR
+    - cmake CMakeLists.txt
+    - make
     
-    stage: test
-    script: ctest
-            
-    after_script: make clean
+jobs:
+  include:
+    - stage: stylecheck
+      before_script: skip
+      script: cppcheck --std=c++11 -q --enable=all --error-exitcode=1 .
+      
+    - stage: memcheck
+      script: valgrind --tool=memcheck --leak-check=full -q ./main.exe
+
+    - stage: test
+      script: ctest --output-on-failure
+      after_script: make clean
