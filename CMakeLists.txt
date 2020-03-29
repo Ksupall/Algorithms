@@ -14,6 +14,8 @@ include_directories(${GTEST_INCLUDE_DIRS})
 set(APP_NAME main.exe)
 set(TEST_NAME test.exe)
 
+add_subdirectory(task_01)
+
 add_executable(${TEST_NAME} test.cpp) 
  
 add_test(NAME Task01Tests COMMAND ${TEST_NAME}) 
