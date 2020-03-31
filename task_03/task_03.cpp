@@ -10,7 +10,7 @@ int lineal_search(std::vector<int> array, int val)
 	for (int i = 0; i < len; i++)
 	{
 		if (array[i] == val)
-			return val;
+			return i;
 	}
 	
 	return NO_ELEM;
@@ -27,7 +27,7 @@ int modified_linear_search(std::vector<int> array, int val)
 		i++;
 	array[len] = last;
 	if (i < len || array[len] == val)
-		return val;
+		return i;
 	return NO_ELEM;
 }
 
