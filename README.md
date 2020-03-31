@@ -6,7 +6,7 @@
 |   Имя директории   | Название алгоритма| Вычислительная сложность |
 | ------------- | ----------------------------------------- | ------|
 |  task_01  | Сортировка вставками | O(n<sup>2</sup>) |
-|  task_02  | Сортировка слиянием | 	O(nlogn) |
+|  task_02  | Сортировка слиянием | 	O(n log n) |
 |  task_03  | Обычный и модифицированный линейный поиск | O(n) |
 
 [![Build Status](https://travis-ci.org/Ksupall/Algorithms.svg?branch=master)](https://travis-ci.org/Ksupall/Algorithms)
