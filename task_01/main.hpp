@@ -1,6 +1,6 @@
-#ifndef __MAIN_HPP__
-#define __MAIN_HPP__
+#ifndef __MAIN__H__
+#define __MAIN__H__
 
-void sorting(int amount, std::vector<int, std::allocator<int> >&);
+void sorting(int amount, std::vector<int> &array);
 
-#endif // __MAIN_HPP__
+#endif // __MAIN__H__

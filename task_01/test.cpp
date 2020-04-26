@@ -1,7 +1,6 @@
 #include "gtest/gtest.h"
 #include "main.hpp"
 #include <cstring>
-#include <iostream>
 
 TEST(check_sorting, one_elem)
 {
