@@ -13,9 +13,9 @@ include_directories(${GTEST_INCLUDE_DIRS})
 set(APP_NAME main.exe)
 set(TEST_NAME test.exe)
 
-add_executable(${APP_NAME} main.cpp sort.cpp) 
+add_executable(${APP_NAME} main.cpp) 
 
-add_executable(${TEST_NAME} test.cpp sort.cpp) 
+add_executable(${TEST_NAME} test.cpp main.cpp) 
 
 target_link_libraries(${TEST_NAME} GTest::GTest GTest::Main) 
 
