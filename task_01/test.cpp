@@ -9,7 +9,7 @@ TEST(check_sorting, one_elem)
 	std::vector<int> ac = {5};
 	int n = v.size();
 	sorting(n, v);
-	for (size_t i = 0; i < v.size(); i++)
+	for (size_t i = 0; i < n; i++)
 		EXPECT_EQ(v[i], ac[i]);
 }
 
@@ -19,7 +19,7 @@ TEST(check_sorting, two_elem)
 	std::vector<int> ac = {10, 15};
 	int n = v.size();
 	sorting(n, v);
-	for (size_t i = 0; i < v.size(); i++)
+	for (size_t i = 0; i < n; i++)
 		EXPECT_EQ(v[i], ac[i]);
 }
 
@@ -29,7 +29,7 @@ TEST(check_sorting, three_elem)
 	std::vector<int> ac = {5, 10, 15};
 	int n = v.size();
 	sorting(n, v);
-	for (size_t i = 0; i < v.size(); i++)
+	for (size_t i = 0; i < n; i++)
 		EXPECT_EQ(v[i], ac[i]);
 }
 
@@ -39,7 +39,7 @@ TEST(check_sorting, four_elem)
 	std::vector<int> ac = {0, 5, 10, 15};
 	int n = v.size();
 	sorting(n, v);
-	for (size_t i = 0; i < v.size(); i++)
+	for (size_t i = 0; i < n; i++)
 		EXPECT_EQ(v[i], ac[i]);
 }
 
@@ -49,7 +49,7 @@ TEST(check_sorting, already_sorted)
 	std::vector<int> ac = {0, 5, 10, 15, 20};
 	int n = v.size();
 	sorting(n, v);
-	for (size_t i = 0; i < v.size(); i++)
+	for (size_t i = 0; i < n; i++)
 		EXPECT_EQ(v[i], ac[i]);
 }
 
@@ -59,7 +59,7 @@ TEST(check_sorting, back_sorted)
 	std::vector<int> ac = {0, 5, 10, 15, 20};
 	int n = v.size();
 	sorting(n, v);
-	for (size_t i = 0; i < v.size(); i++)
+	for (size_t i = 0; i < n; i++)
 		EXPECT_EQ(v[i], ac[i]);
 }
 
