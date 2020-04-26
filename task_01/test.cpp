@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "main.hpp"
+#include "sorting.hpp"
 #include <cstring>
 
 TEST(check_sorting, one_elem)
